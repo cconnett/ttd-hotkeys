@@ -10,11 +10,12 @@ class Hotkeys {
     this.send = document.querySelector(".send-chat-button");
   }
 
-  command(text, e) {
+  command(text) {
     if (!this.active) {
-      if (e) {
-        e.preventDefault();
+      if (this.oddCommand) {
+        text += "﻿";
       }
+      this.oddCommand = !this.oddCommand;
       this.chat.value = text;
       this.chat.focus();
       this.send.click();
@@ -28,9 +29,7 @@ class Hotkeys {
 
   castSpell(spell, tower) {
     if (!this.active) {
-      var command =
-          "!hp" + spell + (tower || "") + (this.oddCommand ? "" : " .");
-      this.oddCommand = !this.oddCommand;
+      var command = "!hp" + spell + (tower || "");
       console.log("Attempting command:", command);
       this.command(command);
     }

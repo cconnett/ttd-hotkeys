@@ -64,7 +64,7 @@ class Hotkeys {
 
   rebind() {
     Mousetrap.reset();
-    Mousetrap.bind('esc', () => this.toggleFocus());
+    Mousetrap.bind('esc', () => this.preventingDefault(() => this.toggleFocus()));
     Mousetrap.bind('p', this.preventingDefault(() => this.priestMode()));
     Mousetrap.bind('shift+p', this.preventingDefault(() => this.towerMode()));
   }

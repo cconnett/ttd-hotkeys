@@ -10,15 +10,6 @@ class Hotkeys {
     this.send = document.querySelector(".send-chat-button");
   }
 
-  preventingDefault(fn) {
-    return function(e) {
-      if (!this.active) {
-        e.preventDefault();
-      }
-      fn();
-    }.bind(this);
-  }
-
   command(text, e) {
     if (!this.active) {
       if (e) {
@@ -63,96 +54,80 @@ class Hotkeys {
 
   rebind() {
     Mousetrap.reset();
-    Mousetrap.bind('esc',
-                   () => this.preventingDefault(() => this.toggleFocus()));
-    Mousetrap.bind('p', this.preventingDefault(() => this.priestMode()));
-    Mousetrap.bind('shift+p', this.preventingDefault(() => this.towerMode()));
+    Mousetrap.bind('esc', () => this.toggleFocus() || this.active);
+    Mousetrap.bind('p', () => this.priestMode() || this.active);
+    Mousetrap.bind('shift+p', () => this.towerMode() || this.active);
   }
 
   towerMode() {
     this.rebind();
 
-    Mousetrap.bind('q', this.preventingDefault(() => this.command("!sniper")));
-    Mousetrap.bind('a',
-                   this.preventingDefault(() => this.command("!falconeer")));
-    Mousetrap.bind('z', this.preventingDefault(() => this.command("!archer")));
+    Mousetrap.bind('q', () => this.command("!sniper") || this.active);
+    Mousetrap.bind('a', () => this.command("!falconeer") || this.active);
+    Mousetrap.bind('z', () => this.command("!archer") || this.active);
 
-    Mousetrap.bind('w', this.preventingDefault(() => this.command("!ninja")));
-    Mousetrap.bind('s',
-                   this.preventingDefault(() => this.command("!assassin")));
-    Mousetrap.bind('x', this.preventingDefault(() => this.command("!rogue")));
+    Mousetrap.bind('w', () => this.command("!ninja") || this.active);
+    Mousetrap.bind('s', () => this.command("!assassin") || this.active);
+    Mousetrap.bind('x', () => this.command("!rogue") || this.active);
 
-    Mousetrap.bind('e',
-                   this.preventingDefault(() => this.command("!bombermage")));
-    Mousetrap.bind('d',
-                   this.preventingDefault(() => this.command("!pyromancer")));
-    Mousetrap.bind('c',
-                   this.preventingDefault(() => this.command("!firemage")));
+    Mousetrap.bind('e', () => this.command("!bombermage") || this.active);
+    Mousetrap.bind('d', () => this.command("!pyromancer") || this.active);
+    Mousetrap.bind('c', () => this.command("!firemage") || this.active);
 
-    Mousetrap.bind('r',
-                   this.preventingDefault(() => this.command("!stormmage")));
-    Mousetrap.bind('f',
-                   this.preventingDefault(() => this.command("!trickster")));
-    Mousetrap.bind('v',
-                   this.preventingDefault(() => this.command("!frostmage")));
+    Mousetrap.bind('r', () => this.command("!stormmage") || this.active);
+    Mousetrap.bind('f', () => this.command("!trickster") || this.active);
+    Mousetrap.bind('v', () => this.command("!frostmage") || this.active);
 
-    Mousetrap.bind('t',
-                   this.preventingDefault(() => this.command("!necromancer")));
-    Mousetrap.bind('g',
-                   this.preventingDefault(() => this.command("!deathdealer")));
-    Mousetrap.bind('b',
-                   this.preventingDefault(() => this.command("!alchemist")));
+    Mousetrap.bind('t', () => this.command("!necromancer") || this.active);
+    Mousetrap.bind('g', () => this.command("!deathdealer") || this.active);
+    Mousetrap.bind('b', () => this.command("!alchemist") || this.active);
 
-    Mousetrap.bind('n', this.preventingDefault(() => this.command("!bard")));
-    Mousetrap.bind('h', this.preventingDefault(() => this.command("!mimic")));
-    Mousetrap.bind('y', this.preventingDefault(() => this.command("!scout")));
+    Mousetrap.bind('n', () => this.command("!bard") || this.active);
+    Mousetrap.bind('h', () => this.command("!mimic") || this.active);
+    Mousetrap.bind('y', () => this.command("!scout") || this.active);
 
-    Mousetrap.bind('0', this.preventingDefault(() => this.command("!train")));
-    Mousetrap.bind('1', this.preventingDefault(() => this.command("!1")));
-    Mousetrap.bind('2', this.preventingDefault(() => this.command("!2")));
-    Mousetrap.bind('3', this.preventingDefault(() => this.command("!3")));
-    Mousetrap.bind('4', this.preventingDefault(() => this.command("!4")));
-    Mousetrap.bind('5', this.preventingDefault(() => this.command("!5")));
-    Mousetrap.bind('6', this.preventingDefault(() => this.command("!6")));
-    Mousetrap.bind('7', this.preventingDefault(() => this.command("!7")));
-    Mousetrap.bind('8', this.preventingDefault(() => this.command("!8")));
-    Mousetrap.bind('9', this.preventingDefault(() => this.command("!9")));
-    Mousetrap.bind('/', this.preventingDefault(() => this.command("!10")));
-    Mousetrap.bind('*', this.preventingDefault(() => this.command("!11")));
-    Mousetrap.bind('-', this.preventingDefault(() => this.command("!12")));
+    Mousetrap.bind('0', () => this.command("!train") || this.active);
+    Mousetrap.bind('1', () => this.command("!1") || this.active);
+    Mousetrap.bind('2', () => this.command("!2") || this.active);
+    Mousetrap.bind('3', () => this.command("!3") || this.active);
+    Mousetrap.bind('4', () => this.command("!4") || this.active);
+    Mousetrap.bind('5', () => this.command("!5") || this.active);
+    Mousetrap.bind('6', () => this.command("!6") || this.active);
+    Mousetrap.bind('7', () => this.command("!7") || this.active);
+    Mousetrap.bind('8', () => this.command("!8") || this.active);
+    Mousetrap.bind('9', () => this.command("!9") || this.active);
+    Mousetrap.bind('/', () => this.command("!10") || this.active);
+    Mousetrap.bind('*', () => this.command("!11") || this.active);
+    Mousetrap.bind('-', () => this.command("!12") || this.active);
 
-    Mousetrap.bind('+', this.preventingDefault(() => this.command("!p")));
-    Mousetrap.bind('.', this.preventingDefault(() => this.command("!pd")));
+    Mousetrap.bind('+', () => this.command("!p") || this.active);
+    Mousetrap.bind('.', () => this.command("!pd") || this.active);
   }
 
   priestMode() {
     this.command("!highpriest");
     this.rebind();
 
-    Mousetrap.bind('1', this.preventingDefault(() => this.tower = 1));
-    Mousetrap.bind('2', this.preventingDefault(() => this.tower = 2));
-    Mousetrap.bind('3', this.preventingDefault(() => this.tower = 3));
-    Mousetrap.bind('4', this.preventingDefault(() => this.tower = 4));
-    Mousetrap.bind('5', this.preventingDefault(() => this.tower = 5));
-    Mousetrap.bind('6', this.preventingDefault(() => this.tower = 6));
-    Mousetrap.bind('7', this.preventingDefault(() => this.tower = 7));
-    Mousetrap.bind('8', this.preventingDefault(() => this.tower = 8));
-    Mousetrap.bind('9', this.preventingDefault(() => this.tower = 9));
-    Mousetrap.bind('/', this.preventingDefault(() => this.tower = 10));
-    Mousetrap.bind('*', this.preventingDefault(() => this.tower = 11));
-    Mousetrap.bind('-', this.preventingDefault(() => this.tower = 12));
+    Mousetrap.bind('1', () => this.tower = 1 || this.active);
+    Mousetrap.bind('2', () => this.tower = 2 || this.active);
+    Mousetrap.bind('3', () => this.tower = 3 || this.active);
+    Mousetrap.bind('4', () => this.tower = 4 || this.active);
+    Mousetrap.bind('5', () => this.tower = 5 || this.active);
+    Mousetrap.bind('6', () => this.tower = 6 || this.active);
+    Mousetrap.bind('7', () => this.tower = 7 || this.active);
+    Mousetrap.bind('8', () => this.tower = 8 || this.active);
+    Mousetrap.bind('9', () => this.tower = 9 || this.active);
+    Mousetrap.bind('/', () => this.tower = 10 || this.active);
+    Mousetrap.bind('*', () => this.tower = 11 || this.active);
+    Mousetrap.bind('-', () => this.tower = 12 || this.active);
 
-    Mousetrap.bind(
-        's', this.preventingDefault(() => this.castSpell("str", this.tower)));
-    Mousetrap.bind(
-        'f', this.preventingDefault(() => this.castSpell("fcs", this.tower)));
-    Mousetrap.bind(
-        'q', this.preventingDefault(() => this.castSpell("pwr", this.tower)));
-    Mousetrap.bind('shift+w',
-                   this.preventingDefault(() => this.castSpell("wis")));
-    Mousetrap.bind('z', this.preventingDefault(() => this.castSpell("frz")));
-    Mousetrap.bind('t', this.preventingDefault(() => this.castSpell("hst")));
-    Mousetrap.bind('`', this.preventingDefault(() => this.castSpell("shd")));
+    Mousetrap.bind('s', () => this.castSpell("str", this.tower) || this.active);
+    Mousetrap.bind('f', () => this.castSpell("fcs", this.tower) || this.active);
+    Mousetrap.bind('q', () => this.castSpell("pwr", this.tower) || this.active);
+    Mousetrap.bind('shift+w', () => this.castSpell("wis") || this.active);
+    Mousetrap.bind('z', () => this.castSpell("frz") || this.active);
+    Mousetrap.bind('t', () => this.castSpell("hst") || this.active);
+    Mousetrap.bind('`', () => this.castSpell("shd") || this.active);
   }
 }
 

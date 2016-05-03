@@ -45,7 +45,7 @@ class Hotkeys {
       this.chat.blur();
     } else {
       if (this.save) {
-        this.chat.value = save;
+        this.chat.value = this.save;
         this.save = "";
       }
       this.chat.focus();

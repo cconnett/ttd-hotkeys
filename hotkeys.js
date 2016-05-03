@@ -96,12 +96,13 @@ class Hotkeys {
     Mousetrap.bind('7', () => this.command("!7") || this.active);
     Mousetrap.bind('8', () => this.command("!8") || this.active);
     Mousetrap.bind('9', () => this.command("!9") || this.active);
-    Mousetrap.bind('/', () => this.command("!10") || this.active);
-    Mousetrap.bind('*', () => this.command("!11") || this.active);
-    Mousetrap.bind('-', () => this.command("!12") || this.active);
+    Mousetrap.bind('tab', () => this.command("!10") || this.active);
+    Mousetrap.bind('numlock', () => this.command("!10") || this.active);
+    Mousetrap.bind('/', () => this.command("!11") || this.active);
+    Mousetrap.bind('*', () => this.command("!12") || this.active);
 
     Mousetrap.bind('+', () => this.command("!p") || this.active);
-    Mousetrap.bind('.', () => this.command("!pd") || this.active);
+    Mousetrap.bind('-', () => this.command("!pd") || this.active);
   }
 
   priestMode() {
@@ -117,9 +118,10 @@ class Hotkeys {
     Mousetrap.bind('7', () => this.tower = 7 || this.active);
     Mousetrap.bind('8', () => this.tower = 8 || this.active);
     Mousetrap.bind('9', () => this.tower = 9 || this.active);
-    Mousetrap.bind('/', () => this.tower = 10 || this.active);
-    Mousetrap.bind('*', () => this.tower = 11 || this.active);
-    Mousetrap.bind('-', () => this.tower = 12 || this.active);
+    Mousetrap.bind('tab', () => this.tower = 10 || this.active);
+    Mousetrap.bind('numlock', () => this.tower = 10 || this.active);
+    Mousetrap.bind('/', () => this.tower = 11 || this.active);
+    Mousetrap.bind('*', () => this.tower = 12 || this.active);
 
     Mousetrap.bind('s', () => this.castSpell("str", this.tower) || this.active);
     Mousetrap.bind('f', () => this.castSpell("fcs", this.tower) || this.active);

@@ -2,8 +2,7 @@ class Hotkeys {
   constructor() {
     setInterval(() => this.findElements(), 2000);
     this.save = "";
-    this.prime = new PrimeGenerator();
-    this.position = 0;
+    this.oddCommand = false;
   }
   
   findElements() {
@@ -38,7 +37,8 @@ class Hotkeys {
 
   castSpell(spell, tower) {
     if (!this.active) {
-      var command = "!hp" + spell + (tower || "") + " " + this.prime.next;
+      var command = "!hp" + spell + (tower || "") + (this.oddCommand ? "" : " .");
+      this.oddCommand = !this.oddCommand;
       console.log("Attempting command:", command);
       this.command(command);
     }

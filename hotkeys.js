@@ -59,6 +59,9 @@ class Hotkeys {
   }
 
   towerMode() {
+    if (this.active) {
+      return;
+    }
     this.rebind();
 
     Mousetrap.bind('q', () => this.command("!sniper") || this.active);
@@ -105,6 +108,9 @@ class Hotkeys {
   }
 
   priestMode() {
+    if (this.active) {
+      return;
+    }
     this.command("!highpriest");
     this.rebind();
 

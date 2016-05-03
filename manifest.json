@@ -2,13 +2,16 @@
   "manifest_version": 2,
   "name": "TTD Hotkeys",
   "version": "0.1",
-
   "description": "Hotkeys to play ArchonTheWizard's TTD.",
-
   "content_scripts": [
     {
-      "matches": ["https://*.twitch.tv/archonthewizard"],
-      "js": ["mousetrap.min.js", "hotkeys.js"]
+      "matches": [
+        "https://*.twitch.tv/archonthewizard"
+      ],
+      "js": [
+        "mousetrap.min.js",
+        "hotkeys.js"
+      ]
     }
   ]
 }

@@ -35,7 +35,9 @@ class Hotkeys {
     }
   }
 
-  get active() { return this.chat == document.activeElement; }
+  get active() {
+    return document.activeElement.className.indexOf("chat_text_input") != -1;
+  }
 
   toggleFocus() {
     if (this.active) {

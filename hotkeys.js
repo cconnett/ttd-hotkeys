@@ -139,7 +139,7 @@ class Hotkeys {
     Mousetrap.bind('z', () => this.castSpell("frz"), this.active);
     Mousetrap.bind('t', () => this.castSpell("hst"), this.active);
     Mousetrap.bind('`', () => this.castSpell("shd"), this.active);
-    Mousetrap.bind('m', () => this.castSpell("mdt"), this.active);
+    Mousetrap.bind('0', () => this.castSpell("mdt"), this.active);
     Mousetrap.bind('c', () => this.castSpell("arm"), this.active);
   }
 }

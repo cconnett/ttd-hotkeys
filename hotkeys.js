@@ -75,7 +75,7 @@ class Hotkeys {
     Mousetrap.bind('S', () => this.command("!assassin"), this.active);
     Mousetrap.bind('X', () => this.command("!rogue"), this.active);
 
-    Mousetrap.bind('E', () => this.command("!lightningmage"), this.active);
+    Mousetrap.bind('#', () => this.command("!lightningmage"), this.active);
     Mousetrap.bind('E', () => this.command("!bombermage"), this.active);
     Mousetrap.bind('D', () => this.command("!pyromancer"), this.active);
     Mousetrap.bind('C', () => this.command("!firemage"), this.active);

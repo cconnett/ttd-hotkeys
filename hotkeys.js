@@ -7,7 +7,7 @@ class Hotkeys {
 
   findElements() {
     this.chat = document.querySelector(".textarea-contain textarea");
-    this.send = document.querySelector(".send-chat-button");
+    this.send = document.querySelector(".chat-interface button.primary");
   }
 
   command(text) {

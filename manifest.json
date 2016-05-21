@@ -10,6 +10,7 @@
       ],
       "js": [
         "mousetrap.min.js",
+        "jquery-2.2.3.min.js",
         "hotkeys.js"
       ]
     }

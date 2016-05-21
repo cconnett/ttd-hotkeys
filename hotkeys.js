@@ -19,6 +19,7 @@ class Hotkeys {
       this.chat.value = text;
       this.chat.focus();
       this.send.click();
+      $(this.chat).trigger(jQuery.Event("keypress", {which: 13, keyCode: 13}));
       this.chat.blur();
 
       this.chat.focus();

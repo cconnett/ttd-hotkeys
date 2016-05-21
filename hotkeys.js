@@ -13,7 +13,7 @@ class Hotkeys {
   command(text) {
     if (!this.active) {
       if (this.oddCommand) {
-        text += "﻿";
+        text += " ﻿";
       }
       this.oddCommand = !this.oddCommand;
       this.chat.value = text;
